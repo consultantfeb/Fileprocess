@@ -9,8 +9,6 @@ namespace Payroll
 {
     public class FileProcess
     {
-        static string[] LineArray;
-
         public static bool CheckFileExist(string filePath)
         {
             return File.Exists(filePath);
@@ -31,6 +29,7 @@ namespace Payroll
         public static void WriteToFile(string filePath, string WriteTextToFile)
         {
             string WriteText = null;
+            string[] LineArray;            
             if (CheckFileExist(filePath))
             {
                 foreach (var Line in ReadFile(filePath))
